@@ -8,7 +8,7 @@ ALL VARIABLES */
     --c-facebook: hsl(195, 100%, 50%);
     --c-twitter: hsl(203, 89%, 53%);
     --c-youtube: hsl(348, 97%, 39%);
-    --g-instagram: linear-gradient(to right, hsl(37, 97%, 70%)), hsl(329, 70%, 58%);
+    --g-instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
 
 
     /* TOGGLE STYLES */
@@ -68,6 +68,15 @@ img{
 }
 
 
+/**********************
+HELPER STYLES 
+**********************/
+
+.decrement{
+    color: var(--c-bright-red);
+}
+
+
 /* MAIN STYLES GOES HERE */
 
 .wrapper{
@@ -85,7 +94,7 @@ HEADER STYLES
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    height: 20rem;
+    height: 25rem;
     padding: 2rem 10%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -100,7 +109,7 @@ HEADER STYLES
 }
 
 .heading__primary{
-   
+   font-size: 2.4rem;
 }
 .heading__secondary{
     color: var(--c-t-desaturated-blue);
@@ -148,16 +157,13 @@ HEADER STYLES
     background-color: var(--c-toggle-light);
 }
 
+    /******************
+     DELETE ME OR FIX ME 
+     *******************/
 
-
-
-
-
-
-
-
-
-
+.btn-input:checked + .btn-text{
+    color: #fff;
+}
 
 
 
@@ -168,7 +174,86 @@ MAIN STYLES
 
 .main{
     padding: 2rem 10%;
+    margin-top: -13rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
 }
+
+    /**********************
+    MAIN CARD STYLES 
+    **********************/
+.card{
+    padding: 3rem;
+    background-color: var(--bg-card-dark-blue);
+    border-radius: .5rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+
+.card__social-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-info-img{
+    margin-right: .5rem;
+}
+.social-info-p{
+    color: var(--c-t-desaturated-blue);
+    font-size: 1.2rem;
+}
+
+.card__stats{
+    margin: 1rem 0;
+    line-height: 1.2;
+    text-align: center;
+}
+.stats__number{
+    font-size: 6rem;
+}
+.stats__text{
+    font-size: 1.4rem;
+    color: var(--c-t-desaturated-blue);
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.today-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--c-lime-green);
+    font-weight: bold;
+}
+.counter-img{
+    margin-right: .4rem;
+}
+
+.card::before{
+    content: '';
+    width: 100%;
+    height: .4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--c-facebook);
+}
+
+
+
+    /******************
+    CARDS TOP COLORS 
+    ******************/
+.card-facebook::before{ background-color: var(--c-facebook); }
+.card-twitter::before{ background-color: var(--c-twitter); }
+.card-instagram::before{ background: var(--g-instagram); }
+.card-youtube::before{ background-color: var(--c-youtube); }
 
 
 
