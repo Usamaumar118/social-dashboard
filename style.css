@@ -26,6 +26,7 @@ ALL VARIABLES */
     --bg-card-dark-blue : hsl(228, 28%, 20%);
     --c-t-desaturated-blue: hsl(228, 34%, 66%);
     --c-t-white: hsl(0, 0%, 100%);
+    --c-hover-color: hsl(225, 32%, 24%);
     
 
     /* LIGHT STYLES */
@@ -192,6 +193,8 @@ MAIN STYLES
     overflow: hidden;
     position: relative;
     text-align: center;
+    transition: background .3s ease-in;
+    cursor: pointer;
 }
 
 
@@ -282,9 +285,17 @@ OVEVIEW STYLES
     display: flex;
     align-items: space-between;
     justify-content: space-between;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem;
     line-height: 1;
+    transition: background .3s ease-in;
+    cursor: pointer;
 }
+.card:hover,
+.overview-card:hover{
+    background: hsl(225, 32%, 24%);
+}
+
+
 .overview-number{
     display: flex;
     align-items: space-between;
