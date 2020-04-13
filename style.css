@@ -1,0 +1,180 @@
+/* 
+ALL VARIABLES */
+
+:root{
+    --c-lime-green: hsl(163, 72%, 41%);
+    --c-bright-red: hsl(356, 69%, 56%);
+
+    --c-facebook: hsl(195, 100%, 50%);
+    --c-twitter: hsl(203, 89%, 53%);
+    --c-youtube: hsl(348, 97%, 39%);
+    --g-instagram: linear-gradient(to right, hsl(37, 97%, 70%)), hsl(329, 70%, 58%);
+
+
+    /* TOGGLE STYLES */
+        /* DARK */
+    --g-toggle-dark: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        /* LIGHT */
+    --c-toggle-light: hsl(230, 22%, 74%);
+
+
+
+    /* DARK STYLES */
+
+    --bg-dark-blue: hsl(230, 17%, 14%);
+    --bg-pattern-dark-blue : hsl(232, 19%, 15%);
+    --bg-card-dark-blue : hsl(228, 28%, 20%);
+    --c-t-desaturated-blue: hsl(228, 34%, 66%);
+    --c-t-white: hsl(0, 0%, 100%);
+    
+
+    /* LIGHT STYLES */
+
+    --bg-white: hsl(0, 0%, 100%);
+    --bg-pattern-pale-blue: hsl(225, 100%, 98%);
+    --bg-card-light-greyish-blue: hsl(227, 47%, 96%);
+    --c-card-dark-greyish-blue: hsl(228, 12%, 44%);
+    --c-very-dark-blue: hsl(230, 17%, 14%);
+
+}
+
+/* BASIC RESETS */
+
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: var(--c-t-white);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* MAIN STYLES GOES HERE */
+
+.wrapper{
+    background: var(--bg-dark-blue);
+}
+
+
+/**********************
+HEADER STYLES 
+**********************/
+
+
+.header{
+    background-color: var(--bg-pattern-dark-blue);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 20rem;
+    padding: 2rem 10%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+    /**********************
+    HEADING STYLES 
+    **********************/
+
+.heading{
+
+}
+
+.heading__primary{
+   
+}
+.heading__secondary{
+    color: var(--c-t-desaturated-blue);
+}
+    /**********************
+    TOGGLE STYLES 
+    **********************/
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-toggle{
+    height: 1.8rem;
+    width: 3.7rem;
+    border-radius: 3rem;
+    background:  var(--g-toggle-dark); 
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-text{
+    margin-right: 1rem;
+    color: var(--c-t-desaturated-blue);
+}
+
+.btn-input{
+    display: none;
+}
+
+.round-slider{
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 5rem;
+    background-color: var(--bg-dark-blue);
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    transition: transform .5s ease-out;
+}
+
+.btn-input:checked + .round-slider{
+    transform: translateX(-1.9rem);
+    background-color: var(--c-toggle-light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************
+MAIN STYLES 
+**********************/
+
+.main{
+    padding: 2rem 10%;
+}
+
+
+
+/**********************
+OVEVIEW STYLES 
+**********************/
+.overview{
+    padding: 2rem 10%;
+}
