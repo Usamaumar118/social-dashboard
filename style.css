@@ -81,6 +81,9 @@ body{
 HELPER STYLES 
 **********************/
 
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
 .decrement{
     color: var(--c-bright-red);
 }
