@@ -17,26 +17,6 @@ ALL VARIABLES */
         /* LIGHT */
     --c-toggle-light: hsl(230, 22%, 74%);
 
-
-
-    /* DARK STYLES */
-
-    --bg-dark-blue: hsl(230, 17%, 14%);
-    --bg-pattern-dark-blue : hsl(232, 19%, 15%);
-    --bg-card-dark-blue : hsl(228, 28%, 20%);
-    --c-t-desaturated-blue: hsl(228, 34%, 66%);
-    --c-t-white: hsl(0, 0%, 100%);
-    --c-hover-color: hsl(225, 32%, 24%);
-    
-
-    /* LIGHT STYLES */
-
-    --bg-white: hsl(0, 0%, 100%);
-    --bg-pattern-pale-blue: hsl(225, 100%, 98%);
-    --bg-card-light-greyish-blue: hsl(227, 47%, 96%);
-    --c-card-dark-greyish-blue: hsl(228, 12%, 44%);
-    --c-very-dark-blue: hsl(230, 17%, 14%);
-
 }
 
 /* BASIC RESETS */
@@ -51,12 +31,37 @@ ALL VARIABLES */
     font-family: inherit;
 }
 
-html{
+
+
+html[data-theme="light"]{
+    --bg:  hsl(0, 0%, 100%);
+    --bg-pattern : hsl(225, 100%, 98%);
+    --bg-card :  hsl(227, 47%, 96%);
+    --c-secondary-text: hsl(228, 12%, 44%) ;
+    --c-primary-text: hsl(230, 17%, 14%);
+
+
     font-size: 62.5%;
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
     line-height: 1.5;
-    color: var(--c-t-white);
+    color: var(--c-primary-text);
+
+    
+}
+html[data-theme="dark"]{
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: var(--c-primary-text);
+    
+    --bg: hsl(230, 17%, 14%);
+    --bg-pattern : hsl(232, 19%, 15%);
+    --bg-card : hsl(228, 28%, 20%);
+    --c-secondary-text: hsl(228, 34%, 66%);
+    --c-primary-text: hsl(0, 0%, 100%);
+
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -69,7 +74,7 @@ img{
 }
 
 body{
-    background-color: var(--bg-dark-blue);
+    background-color: var(--bg);
 }
 
 /**********************
@@ -82,11 +87,16 @@ HELPER STYLES
 .increment{
     color: var(--c-lime-green);
 }
+.transition{
+    transition: all .3s ease-in;
+}
+
+
 
 /* MAIN STYLES GOES HERE */
 
 .wrapper{
-    background: var(--bg-dark-blue);
+    background: var(--bg);
 }
 
 
@@ -96,7 +106,7 @@ HEADER STYLES
 
 
 .header{
-    background-color: var(--bg-pattern-dark-blue);
+    background-color: var(--bg-pattern);
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -115,7 +125,7 @@ HEADER STYLES
    font-size: 2.4rem;
 }
 .heading__secondary{
-    color: var(--c-t-desaturated-blue);
+    color: var(--c-secondary-text);
 }
     /**********************
     TOGGLE STYLES 
@@ -136,8 +146,10 @@ HEADER STYLES
 }
 
 .btn-text{
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-right: 1rem;
-    color: var(--c-t-desaturated-blue);
+    color: var(--c-secondary-text);
 }
 
 .btn-input{
@@ -148,15 +160,15 @@ HEADER STYLES
     height: 1.4rem;
     width: 1.4rem;
     border-radius: 5rem;
-    background-color: var(--bg-dark-blue);
+    background-color: var(--bg);
     position: absolute;
-    top: 2px;
-    right: 2px;
-    transition: transform .5s ease-out;
+    top: .2rem;
+    left: .2rem;
+    transition: transform .3s ease-out;
 }
 
 .btn-input:checked + .round-slider{
-    transform: translateX(-1.9rem);
+    transform: translateX(1.9rem);
     background-color: var(--c-toggle-light);
 }
 
@@ -188,12 +200,11 @@ MAIN STYLES
     **********************/
 .card{
     padding: 3rem;
-    background-color: var(--bg-card-dark-blue);
+    background-color: var(--bg-card);
     border-radius: .5rem;
     overflow: hidden;
     position: relative;
     text-align: center;
-    transition: background .3s ease-in;
     cursor: pointer;
 }
 
@@ -207,7 +218,7 @@ MAIN STYLES
     margin-right: .5rem;
 }
 .social-info-p{
-    color: var(--c-t-desaturated-blue);
+    color: var(--c-secondary-text);
     font-size: 1.2rem;
 }
 
@@ -221,7 +232,7 @@ MAIN STYLES
 }
 .stats__text{
     font-size: 1.4rem;
-    color: var(--c-t-desaturated-blue);
+    color: var(--c-secondary-text);
     letter-spacing: .5rem;
     text-transform: uppercase;
     font-weight: 400;
@@ -280,19 +291,19 @@ OVEVIEW STYLES
 }
 
 .overview-card{
-    background: var(--bg-card-dark-blue);
+    background: var(--bg-card);
     border-radius: .5rem;
     display: flex;
     align-items: space-between;
     justify-content: space-between;
     padding: 2.5rem;
     line-height: 1;
-    transition: background .3s ease-in;
     cursor: pointer;
 }
 .card:hover,
 .overview-card:hover{
-    background: hsl(225, 32%, 24%);
+    transition: background .3s ease-in;
+    background: var(--bg-pattern);
 }
 
 
@@ -304,7 +315,7 @@ OVEVIEW STYLES
 .numbers-text{
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--c-t-desaturated-blue);
+    color: var(--c-secondary-text);
     margin-bottom: 2rem;
 }
 .numbers-counter{
@@ -396,7 +407,7 @@ OVEVIEW STYLES
         width: 90%;
         height: 1px;
         opacity: .5;
-        background-color: var(--c-t-desaturated-blue);
+        background-color: var(--c-secondary-text);
         position: absolute;
         top: 9.5rem;
         right: 5%;
